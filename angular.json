@@ -19,24 +19,45 @@
           "options": {
             "outputPath": "dist/AngularWithAngularjsScss",
             "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
+            "main": "src/ng/main.ts",
+            "polyfills": "src/ng/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
+              "src/ngjs",
               "src/favicon.ico",
-              "src/assets"
+              "src/ng/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/ng/styles.scss",
+              "src/ngjs/lib/bootstrap/dist/css/bootstrap.css",
+              "src/ngjs/app.css",
+              "src/ngjs/app.animations.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/ngjs/lib/jquery/dist/jquery.js",
+              "src/ngjs/lib/angular/angular.js",
+              "src/ngjs/lib/angular-animate/angular-animate.js",
+              "src/ngjs/lib/angular-resource/angular-resource.js",
+              "src/ngjs/lib/angular-route/angular-route.js",
+              "src/ngjs/app.module.js",
+              "src/ngjs/app.config.js",
+              "src/ngjs/app.animations.js",
+              "src/ngjs/core/core.module.js",
+              "src/ngjs/core/checkmark/checkmark.filter.js",
+              "src/ngjs/core/phone/phone.module.js",
+              "src/ngjs/core/phone/phone.service.js",
+              "src/ngjs/phone-list/phone-list.module.js",
+              "src/ngjs/phone-list/phone-list.component.js",
+              "src/ngjs/phone-detail/phone-detail.module.js",
+              "src/ngjs/phone-detail/phone-detail.component.js"
+            ]
           },
           "configurations": {
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
+                  "replace": "src/ng/environments/environment.ts",
+                  "with": "src/ng/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -78,17 +99,17 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.spec.json",
-            "karmaConfig": "src/karma.conf.js",
+            "main": "src/ng/test.ts",
+            "polyfills": "src/ng/polyfills.ts",
+            "tsConfig": "src/ng/tsconfig.spec.json",
+            "karmaConfig": "src/ng/karma.conf.js",
             "styles": [
-              "src/styles.scss"
+              "src/ng/styles.scss"
             ],
             "scripts": [],
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/ng/assets"
             ]
           }
         },
