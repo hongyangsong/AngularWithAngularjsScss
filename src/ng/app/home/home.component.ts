@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, Inject } from '@angular/core';
+import { PHONE_SERVICE } from "src/ng/app/core/phone.service";
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -7,9 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(@Inject(PHONE_SERVICE) private phoneService: any) { }
+  phones: any[] = [];
   ngOnInit() {
+    this.phones = this.phoneService.query();
   }
 
 }
